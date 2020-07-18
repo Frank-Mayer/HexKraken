@@ -1,0 +1,16 @@
+#byteView span {
+  font-family: monospace;
+}
+
+.byte:hover {
+  background-color: var(--color);
+}
+
+#byteView table {
+  border-spacing: var(--font-size) 0;
+}
+
+#byteView {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}

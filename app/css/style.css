@@ -1,0 +1,44 @@
+*,
+*:focus,
+*:active {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --font-size: calc(100vw / 38);
+  --color: rgb(191, 90, 242);
+  --background: rgb(28, 28, 30);
+  --foreground: rgb(142, 142, 147);
+  --accent: rgb(245, 245, 245);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color: rgb(175, 82, 222);
+    --background: rgb(242, 242, 247);
+    --accent: rgb(5, 5, 5);
+  }
+}
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--accent);
+  scrollbar-width: none;
+}
+
+a,
+p,
+span {
+  font-size: var(--font-size);
+}
+
+#app {
+  background-color: var(--background);
+}

@@ -1,0 +1,29 @@
+#app {
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+#menu,
+#main {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+#menu {
+  background-color: var(--foreground);
+  width: 80vw;
+  max-width: 300px;
+}
+
+#main {
+  width: 100vw;
+}

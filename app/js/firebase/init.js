@@ -1,3 +1,4 @@
+"use strict";
 const firebaseConfig = {
     apiKey: "AIzaSyDt49XBPxl_RpcqvV6CXfN6mBFyZG-QlWM",
     authDomain: "hexkraken.firebaseapp.com",
