@@ -17,7 +17,20 @@
   --color1: rgb(10, 132, 255);
   --background: rgb(28, 28, 30);
   --foreground: rgb(142, 142, 147);
+  --menuBackground: rgba(142, 142, 147, 0.95);
   --accent: rgb(245, 245, 245);
+}
+
+@supports (backdrop-filter: blur(8px)) {
+  :root {
+    --menuBackground: rgba(142, 142, 147, 0.85);
+  }
+}
+
+@supports (-webkit-backdrop-filter: blur(8px)) {
+  :root {
+    --menuBackground: rgba(142, 142, 147, 0.85);
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -45,7 +58,16 @@ span {
   background-color: var(--background);
 }
 
+*::-moz-selection,
+*::selection {
+  background-color: var(--color1);
+}
+
 @font-face {
   font-family: RobotoMono;
   src: url(../fonts/RobotoMono-Regular.ttf);
+}
+
+#fileMsg {
+  color: rgb(255, 169, 158);
 }

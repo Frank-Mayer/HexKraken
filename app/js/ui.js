@@ -4,6 +4,7 @@ var ui = new class {
   byteView;
   linesOnScreen;
   viewingBytes;
+  menuIsOpen = false;
   constructor() {
     this.byteView = document.getElementById("byteView");
     this.linesOnScreen = (window.innerHeight / (window.innerWidth / 42));
@@ -41,6 +42,17 @@ var ui = new class {
     this.byteView.scrollIntoView({ block: "start", behavior: "smooth" });
     for (let el of document.getElementsByClassName("selection")) {
       el.classList.remove("selection");
+    }
+  }
+  toggleMenu() {
+    this.menuIsOpen = !this.menuIsOpen;
+    if (this.menuIsOpen) {
+      document.getElementById("menu").classList.add("open");
+      document.getElementById("menuButton").classList.add("open");
+    }
+    else {
+      document.getElementById("menu").classList.remove("open");
+      document.getElementById("menuButton").classList.remove("open");
     }
   }
 }

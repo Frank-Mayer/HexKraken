@@ -1,6 +1,4 @@
 #app {
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
   position: absolute;
   top: 0;
   right: 0;
@@ -8,24 +6,51 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  overflow-y: hidden;
-  overflow-x: scroll;
+  overflow: hidden;
 }
 
 #menu,
 #main {
   height: 100vh;
-  scroll-snap-align: start;
   overflow: hidden;
 }
 
 #menu {
-  background-color: var(--foreground);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: var(--menuBackground);
   width: 80vw;
   max-width: 300px;
   overflow-y: scroll;
+  -webkit-transform: translateX(-300px);
+  transform: translateX(-300px);
+  transition: 500ms;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+#menu.open {
+  -webkit-transform: translateX(0);
+  transform: translateX(-0);
 }
 
 #main {
   width: 100vw;
+}
+
+#menuButton {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 0;
+  top: calc(50vh - 15px);
+  bottom: calc(50vh - 15px);
+  fill: var(--accent);
+  transition: 500ms;
+}
+
+#menuButton.open {
+  transform: rotate(540deg) translateX(-50px);
 }

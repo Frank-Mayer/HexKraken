@@ -1,5 +1,8 @@
 #byteView span {
   font-family: RobotoMono, monospace;
+  -webkit-box-shadow: inset 0px 0px 0px 1px var(--foreground);
+  -moz-box-shadow: inset 0px 0px 0px 1px var(--foreground);
+  box-shadow: inset 0px 0px 0px 1px var(--foreground);
 }
 
 #byteViewParent {
@@ -8,11 +11,6 @@
   overflow-y: visible;
   max-height: 100%;
   margin-bottom: calc(var(--font-size) * 3);
-}
-
-#byteView span::-moz-selection,
-#byteView span::selection {
-  background-color: var(--color1);
 }
 
 #byteView span:hover,

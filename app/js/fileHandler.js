@@ -2,7 +2,16 @@
 
 var fileHandler = new class {
   load(files) {
-    let fileData = new Blob([files[0]]);
+    let f = files[0];
+    if (f.size > 1049000000) {
+      document.getElementById("fileMsg").innerText = "File to big";
+      return;
+    }
+    document.getElementById("fileMsg").innerText = "";
+    let fileData = new Blob([f]);
+    document.getElementById("fileName").innerText = f.name;
+    document.getElementById("fileSize").innerText = f.size + " Byte";
+    document.getElementById("fileType").innerText = f.type === "" ? "unknown" : f.type;
     // Pass getBuffer to promise.
     var promise = new Promise(this.getBuffer(fileData));
     // Wait for promise to be resolved, or log error.

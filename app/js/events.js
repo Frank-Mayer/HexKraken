@@ -39,3 +39,5 @@ document.getElementById("byteView").addEventListener("wheel", (evt) => {
     ui.updateByteView(velocity)
   }
 });
+
+document.getElementById("menuButton").addEventListener("click", () => { ui.toggleMenu() });
