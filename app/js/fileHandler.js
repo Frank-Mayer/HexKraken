@@ -3,10 +3,11 @@
 var fileHandler = new class {
   load(files) {
     let f = files[0];
-    if (f.size > 1049000000) {
+    if (f.size > 10490000) {
       document.getElementById("fileMsg").innerText = "File to big";
       return;
     }
+    ui.viewingBytes = new Array();
     document.getElementById("fileMsg").innerText = "";
     let fileData = new Blob([f]);
     document.getElementById("fileName").innerText = f.name;

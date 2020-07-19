@@ -18,5 +18,5 @@ else {
 
 function main() {
   requireJS(["fileHandler.js", "ui.js", "ByteBuffer.js", "events.js"]);
-  requireCSS(["style.css", "menu.css", "byteView.css"]);
+  requireCSS(["style.css", "menu.css", "byteView.css", "scrollbar.css"]);
 }

@@ -11,6 +11,7 @@ class ByteBuffer {
   }
 
   getByte(index) {
+    document.getElementById("scrollThumb").style.top = String((index / this.getLength()) * 100) + "%";
     let size = 16;
     let pos = `<span>${(index * size).toString(16).toUpperCase().padStart(8, "0")}</span>`;
     let hex = "";

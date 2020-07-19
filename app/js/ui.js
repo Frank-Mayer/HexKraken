@@ -24,12 +24,16 @@ var ui = new class {
   }
   updateByteView(velocity) {
     this.scroll = true;
-    if (velocity > 0 && this.viewingBytes[this.viewingBytes.length - 1] < bytes.getLength()) {
-      console.warn(`las el is ${this.viewingBytes[this.viewingBytes.length - 1]}\nDate length is ${bytes.getLength()}`)
+    if (velocity > 0) {
       document.getElementById(`B${this.viewingBytes[0]}`).remove();
       this.viewingBytes.shift();
       let i = this.viewingBytes[this.viewingBytes.length - 1] + 1;
-      this.byteView.innerHTML += this.formatByteData(i, bytes.getByte(i));
+      if (this.viewingBytes[this.viewingBytes.length - 1] < bytes.getLength()) {
+        this.byteView.innerHTML += this.formatByteData(i, bytes.getByte(i));
+      }
+      else {
+        this.byteView.innerHTML += this.formatByteData(i, { pos: "", hex: "", txt: "" });
+      }
       this.viewingBytes.push(i);
     }
     else if (velocity < 0 && this.viewingBytes[0] > 0) {
@@ -39,7 +43,6 @@ var ui = new class {
       this.byteView.innerHTML = this.formatByteData(i, bytes.getByte(i)) + this.byteView.innerHTML;
       this.viewingBytes.unshift(i);
     }
-    this.byteView.scrollIntoView({ block: "start", behavior: "smooth" });
     for (let el of document.getElementsByClassName("selection")) {
       el.classList.remove("selection");
     }

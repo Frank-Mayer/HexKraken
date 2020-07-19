@@ -32,11 +32,11 @@ document.addEventListener('keydown', (evt) => {
 }, false);
 
 
-document.getElementById("byteView").addEventListener("wheel", (evt) => {
+document.getElementById("app").addEventListener("wheel", (evt) => {
   let velocity = Math.round(evt.deltaY);
   if (Math.abs(velocity) > 1.5) {
     evt.preventDefault();
-    ui.updateByteView(velocity)
+    ui.updateByteView(velocity);
   }
 });
 
