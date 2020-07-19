@@ -16,12 +16,14 @@
 #main {
   height: 100vh;
   scroll-snap-align: start;
+  overflow: hidden;
 }
 
 #menu {
   background-color: var(--foreground);
   width: 80vw;
   max-width: 300px;
+  overflow-y: scroll;
 }
 
 #main {

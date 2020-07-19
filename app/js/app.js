@@ -1,10 +1,10 @@
 "use strict";
-
-let debug = false;
+var bytes = void (0);
+let debug = true;
 if (debug) {
 }
 else {
-  requireJS(["firebase/firebase-app.js", "firebase/init.js"]);
+  // requireJS(["firebase/firebase-app.js", "firebase/init.js"]);
 }
 
 if (String(document.readyState) !== 'loading') {
@@ -17,16 +17,6 @@ else {
 }
 
 function main() {
-  requireJS(["fileHandler.js", "ui.js", "ByteBuffer.js"]);
+  requireJS(["fileHandler.js", "ui.js", "ByteBuffer.js", "events.js"]);
   requireCSS(["style.css", "menu.css", "byteView.css"]);
-
-  new Vue({
-    el: "#app",
-    data: {},
-    methods: {
-      onFileChange(evt) {
-        fileHandler.load(evt.target.files);
-      }
-    }
-  });
 }

@@ -7,13 +7,8 @@ var fileHandler = new class {
     var promise = new Promise(this.getBuffer(fileData));
     // Wait for promise to be resolved, or log error.
     promise.then(function (data) {
-      let table = document.createElement("table");
-      let tr = document.createElement("tr");
-      let bytes = new ByteBuffer(data);
-      bytes.getDisplay(tr);
-      ui.byteView.innerHTML = "";
-      table.appendChild(tr);
-      ui.byteView.appendChild(table);
+      bytes = new ByteBuffer(data);
+      ui.refreshByteView();
     }).catch(function (err) {
       console.error(err);
     });

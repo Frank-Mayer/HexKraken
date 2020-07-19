@@ -12,8 +12,9 @@
 }
 
 :root {
-  --font-size: calc(100vw / 38);
+  --font-size: calc(100vw / 42);
   --color: rgb(191, 90, 242);
+  --color1: rgb(10, 132, 255);
   --background: rgb(28, 28, 30);
   --foreground: rgb(142, 142, 147);
   --accent: rgb(245, 245, 245);
@@ -22,6 +23,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --color: rgb(175, 82, 222);
+    --color1: rgb(0, 122, 255);
     --background: rgb(242, 242, 247);
     --accent: rgb(5, 5, 5);
   }
@@ -41,4 +43,9 @@ span {
 
 #app {
   background-color: var(--background);
+}
+
+@font-face {
+  font-family: RobotoMono;
+  src: url(../fonts/RobotoMono-Regular.ttf);
 }

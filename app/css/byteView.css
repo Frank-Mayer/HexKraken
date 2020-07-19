@@ -1,16 +1,21 @@
 #byteView span {
-  font-family: monospace;
+  font-family: RobotoMono, monospace;
 }
 
-.byte:hover {
-  background-color: var(--color);
-}
-
-#byteView table {
+#byteViewParent {
   border-spacing: var(--font-size) 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+  max-height: 100%;
+  margin-bottom: calc(var(--font-size) * 3);
 }
 
-#byteView {
-  overflow-x: hidden;
-  overflow-y: scroll;
+#byteView span::-moz-selection,
+#byteView span::selection {
+  background-color: var(--color1);
+}
+
+#byteView span:hover,
+#byteView span.selection {
+  background-color: var(--color) !important;
 }
