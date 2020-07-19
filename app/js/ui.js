@@ -6,7 +6,7 @@ var ui = new class {
   viewingBytes;
   constructor() {
     this.byteView = document.getElementById("byteView");
-    this.linesOnScreen = (window.innerWidth / 42) - 4;
+    this.linesOnScreen = (window.innerHeight / (window.innerWidth / 42));
     this.viewingBytes = [];
   }
   formatByteData(i, { pos, hex, txt }) {
